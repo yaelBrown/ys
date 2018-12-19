@@ -1,0 +1,22 @@
+/* Basic elements */
+
+/* 
+   pri: #212121
+   sec: #616161
+   ter: #BDBDBD
+   txt: #FAFAFA
+*/
+
+body {
+  font-family: Helvetica;
+  background-color: #212121;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  color: red;
+}
+
+h3 {
+  color: green;
+}
