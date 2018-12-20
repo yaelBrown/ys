@@ -37,7 +37,7 @@ input:focus {
 }
 
 label {
-  color: #999;
+  color: #999999;
   font-size: 1em;
   font-weight: normal;
   position: absolute;
@@ -47,10 +47,87 @@ label {
   transition: all 0.2s ease;
 }
 
+/* active */
+
 input:focus ~ label, input.used ~ label {
   top: -20px
   transform: scale(.75); /* font size 14px */
   left: -2px;
-  color: #4a89dc;
+  color: #999999;
 }
 
+/* underline (bottom line) */
+
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #999999
+  transition: all 0.2s ease;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after { 
+  right: 50%;
+}
+
+/* active */
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* highlight */
+
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active */
+
+@keyframes  inputHighlighter {
+  from {
+    background: #212121;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+/* button */
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: .3em 0 1em 0;
+  width: 100%
+  vertical-align: middle;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  background transparent;
+  border: 0;
+  border-bottom: 2px solid #3160B6;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.button:focus {
+  outline: 0;
+}
