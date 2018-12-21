@@ -110,7 +110,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 .button {
   position: relative;
-  display: inline-block;
+  display: display-block;
   padding: 12px 24px;
   margin: .3em 0 1em 0;
   width: 100%
