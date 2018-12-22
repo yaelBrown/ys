@@ -11,6 +11,8 @@ body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   background-color: #212121;
   -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -22,4 +24,3 @@ h1 {
 h3 {
   color: #212121;
 }
-

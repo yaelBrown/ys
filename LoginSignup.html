@@ -6,67 +6,57 @@
     <meta name="viewport" content="width = device-width, initial-scale = 1">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
-    <!-- Eric Meyer's Reset CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
-
-    <!-- Bootstrap css file -->
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     
     <!-- Materialize CSS -->
     <link rel="stylesheet" type="text/css" href="./css/materialize.min.css">
 
     <!-- Main Style.css file -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/loginSignup.css">
-    
-    <!-- Jquery js file -->
-    <script src="./js/jquery-3.3.1.min.js"></script>
-
-    <!-- Bootstrap js file -->
-    <script src="./js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/loginSignup-2.css">
     
     <!-- Materialize js File -->
     <script src="./js/materialize.min.js"></script>
-
-    <!-- LoginSignup page specific js File -->
-    <script src="./js/loginSignup.js"></script>
     
     <!-- Roboto google font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    
+
     <!-- Shortcut Icon -->
     <link rel="shortcut icon" href="img/yb-logo.png">
 
     <title>YaelSpace - a place for Yael's friends. - Login/Signup</title>
   </head>
-  
+
   <body>
-    <h1 class="title">YaelSpace, a place for Yael's friends.</h1>
-    <form>
-      <h3>Login</h3>
-      <div class="group">
-        <input type="email" name="email" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Email</label>
+    <!-- Page title -->
+    <div class="row">
+      <div class="container" style="padding-bottom: 30px">
+        <h1 class="title">YaelSpace, a place for Yael's friends.</h1>
       </div>
-      <div class="group">
-        <input type="password" name="password" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Password</label>
-      </div>
-      <button type="button" class="button buttonBlue">
-        <div class="ripples buttonRipples">
-          <span class="ripplesCircle"></span>
+    </div>
+
+    <!-- Login screen -->
+    <div class="row">
+      <div class="col sm12 m12 l12">
+        <div class="card grey darken-2 center" style="margin: auto; width: 400px; padding-top: 20px; padding-bottom: 20px;">
+          <span class="card-title white-text">Login</span>
+            
+          <div class="input-field col s12 grey darken-2" style="margin-top: 5px; margin-bottom: 0px">
+            <input id="email" type="email" class="validate" required>
+            <label for="email">Email</label>
+          </div> 
+
+          <div class="input-field col s12 grey darken-2" style="margin-top: 10px; margin-bottom: 0px">
+            <input id="password" type="password" class="validate" required>
+            <label for="password">Password</label>
+          </div>
+
+          <center>
+            <button class="btn grey waves-effect waves-light" type="submit" name="login">Login</button>
+            <button class="btn grey waves-effect waves-light" type="submit" name="signup">Signup</button>
+          </center>
         </div>
-        <p>Login</p>
-      </button>
-    </form>
-    
-    <a class="waves-effect waves-light btn">button</a>
-    <!-- Use https://materializecss.com/getting-started.html to rebuild this form then add logic to it with validation.  -->  
+      </div>
+    </div>
     
   </body>
   
