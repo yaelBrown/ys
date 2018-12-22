@@ -14,11 +14,14 @@
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     
     <!-- Materialize CSS -->
-    <link rel="stylesheet" type="text/css" href="./materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/materialize.min.css">
 
     <!-- Main Style.css file -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/loginSignup.css">
+    
+    <!-- Jquery js file -->
+    <script src="./js/jquery-3.3.1.min.js"></script>
 
     <!-- Bootstrap js file -->
     <script src="./js/bootstrap.bundle.min.js"></script>
@@ -28,6 +31,9 @@
 
     <!-- LoginSignup page specific js File -->
     <script src="./js/loginSignup.js"></script>
+    
+    <!-- Roboto google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     
     <!-- Shortcut Icon -->
     <link rel="shortcut icon" href="img/yb-logo.png">
@@ -40,13 +46,13 @@
     <form>
       <h3>Login</h3>
       <div class="group">
-        <input type="email" name="email">
+        <input type="email" name="email" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Email</label>
       </div>
       <div class="group">
-        <input type="password" name="password">
+        <input type="password" name="password" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Password</label>
@@ -59,6 +65,8 @@
       </button>
     </form>
     
+    <a class="waves-effect waves-light btn">button</a>
+    <!-- Use https://materializecss.com/getting-started.html to rebuild this form then add logic to it with validation.  -->  
     
   </body>
   

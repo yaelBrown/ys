@@ -33,3 +33,5 @@ $(window, document, undefined).ready(function() {
   });
 
 });
+
+var test = true;
