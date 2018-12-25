@@ -24,3 +24,15 @@ h1 {
 h3 {
   color: #212121;
 }
+
+input {
+  color: #ffffff;
+}
+
+footer h3 {
+  vertical-align: bottom;
+  bottom: 0;
+  color: #fff;
+  clear: both;
+
+}

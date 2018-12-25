@@ -12,7 +12,7 @@
 
     <!-- Main Style.css file -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/loginSignup-2.css">
+    <link rel="stylesheet" type="text/css" href="./css/Signup.css">
     
     <!-- Materialize js File -->
     <script src="./js/materialize.min.js"></script>
@@ -27,7 +27,86 @@
   </head>
   
   <body>
-    <h1>Signup</h1>
+    <!-- Facebook SDK -->
+    <script>
+      // Initialize and setup facebook jsx
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '529555397527138',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v3.2'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=529555397527138&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+     <!-- Page title -->
+    <div class="row">
+      <div class="container" style="padding-bottom: 30px">
+        <h1 class="title">YaelSpace, a place for Yael's friends.</h1>
+      </div>
+    </div>
+
+    <!-- Login screen -->
+    <div class="row">
+      <div class="col sm12 m12 l12">
+        <div class="card grey darken-2 center" style="margin: auto; width: 400px; padding-top: 20px; padding-bottom: 20px;">
+          <span class="card-title white-text">Signup</span>
+          
+          <br>
+          <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+
+          <div class="input-field col s12 grey darken-2" style="margin-top: 5px; margin-bottom: 0px">
+            <input id="fname" type="text" class="validate" required>
+            <label for="fname">First Name</label>
+          </div> 
+
+          <div class="input-field col s12 grey darken-2" style="margin-top: 5px; margin-bottom: 0px">
+            <input id="lname" type="text" class="validate" required>
+            <label for="lname">Last Name</label>
+          </div> 
+            
+          <div class="input-field col s12 grey darken-2" style="margin-top: 5px; margin-bottom: 0px">
+            <input id="email" type="email" class="validate" required>
+            <label for="email">Email</label>
+          </div> 
+
+          <div class="input-field col s12 grey darken-2" style="margin-top: 10px; margin-bottom: 0px">
+            <input id="password" type="password" class="validate" required>
+            <label for="password">Password</label>
+          </div>
+
+          <div class="input-field col s12 grey darken-2" style="margin-top: 10px; margin-bottom: 0px">
+            <input id="passwordConfirm" type="password" class="validate" required>
+            <label for="passwordConfirm">Confirm Password</label>
+          </div>
+
+          <center>
+            <button class="btn grey waves-effect waves-light" type="submit" name="login">Login</button>
+            <button class="btn grey waves-effect waves-light" type="submit" name="signup">Signup</button>
+          </center>
+        </div>
+      </div>
+    </div>
+    
   </body>
   
   <footer>
