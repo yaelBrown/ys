@@ -1,3 +1,16 @@
+/* 
+1. NavBar
+2. SideBar
+3. Content Area
+4. Footer
+*/
+
+/*
+===========================================
+1. NavBar
+===========================================
+*/
+
 .wrapper {
   display: block;
 }
@@ -20,6 +33,17 @@ i.right {
   margin-left: 0px;
   margin-right: 0px;
 }
+
+.mdc-text-field {
+  width: 400px;
+  display: inline-block;
+}
+
+/*
+===========================================
+2. SideBar
+===========================================
+*/
 
 #sidebar {
   min-width: 150px;
@@ -76,6 +100,12 @@ ul.list-unstyled.components p {
   opacity: 1;
 }
 
+/*
+===========================================
+3. Content Area
+===========================================
+*/
+
 .contentArea {
   margin-top: 0px;
   margin-left: 0px;
@@ -83,3 +113,24 @@ ul.list-unstyled.components p {
   border-top: 0px;
   color: #fff;
 }
+
+/*
+===========================================
+4. Footer
+===========================================
+*/
+
+footer {
+  position: float;
+  left: 0px;
+}
+
+footer h3 {
+  color: #fff;
+  margin-top: 5px;
+}
+
+
+
+
+
