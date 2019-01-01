@@ -3,8 +3,22 @@
 }
 
 nav {
-  background-color: #FAFAFA;
+  background-color: #616161;
   color: #949494;
+}
+
+.nav-wrapper {
+  color: #fff;
+  height: 50px;
+}
+
+nav i {
+  font-size: 1em;
+}
+
+i.right {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 #sidebar {
@@ -19,7 +33,7 @@ nav {
   z-index: 997
   text-align: center;
   padding: 0px;
-  color: #949494;
+  color: #fafafa;
 }
 
 .sidebar-header {
@@ -56,7 +70,16 @@ ul.list-unstyled.components p {
   transition: all 0.5s ease-in-out;
 }
 /* display .overlay when it has the .active class */
+
 .overlay.active {
   display: block;
   opacity: 1;
+}
+
+.contentArea {
+  margin-top: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  border-top: 0px;
+  color: #fff;
 }
