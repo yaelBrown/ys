@@ -33,46 +33,90 @@
       <div class="nav-wrapper">
 
         <ul class="right hide-on-med-and-down">
-          <li><a href="#"><i class="material-icons right">mood</i></a></li>
-          <li><a href="#"><i class="material-icons right">notifications</i></a></li>
-          <li><a href="#"><i class="material-icons right">messages</i></a></li>
+          <li><a href="#"><i class="small material-icons right">mood</i></a></li>
+          <li><a href="#"><i class="small material-icons right">notifications</i></a></li>
+          <li><a href="#"><i class="small material-icons right">messages</i></a></li>
         </ul>
       </div>
     </nav>
 
 
-
-    <!-- Left Sidebar -->
-    <div class="wrapper">
-
-      <!-- Sidebar -->
-      <nav id="sidebar">
-        <div class="sidebar-header">
-          <p>YaelSpace</p>
-        </div>
-          <ul>
-            <li>item</li>
-            <li>another item</li>
-            <li>fasfasdfff</li>
-          </ul>
-      </nav>
-    </div>
-
-
     <!-- Content area  -->
     <div class="contentArea">
-      <div class="container">
-        <p>lemonade</p>
-      </div>
-    </div>
+      <div class="containder">
+        <div class="statusAndPosts">
+
+        <!-- Left SideBar -->
+        <div class="row">
+          <div class="sidebar col s2 left">
+            <img class="sidebarProfilePic" src="img/profilePics/jasonMason.jpg">
+            <h5 class="sidebarUsername">Jason Mason</h5>
+            <p class="sidebarText">View Profile</p>
+            <p class="sidebarText">News Feed</p>
+            <p class="sidebarText">Messenger</p>
+            <p class="sidebarText">Notifications</p>
+            <p class="sidebarText">Friends</p>
+            <p class="sidebarText">Pictures</p>
+          </div>
+        </div>
+        
+        <!-- Update status -->
+        <div class="row">
+          <form class="col s8 offset-s2">
+            <div class="row">
+              <div class="input-field col s12 status">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Status</label>
+                <div class="status-icons right">
+                  <i class="material-icons">mood</i>
+                  <i class="material-icons">photo_camera</i>
+                  <i class="material-icons">send</i>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Display Post -->
+        <div class="row">
+          <div class="post col s8 offset-s2">
+            <div class="postHeader">
+              <img class="profilePicSM" src="./img/profilePics/jasonMason.jpg">
+              <p class="posterName">Jason Mason</p>
+              <p class="posterTimePosted right">8:30 am</p>
+            </div>
+            <hr>
+            <div class="postBody">
+              <p class="postBodyText">Hello everyone!</p>
+            </div>
+            <hr>
+            <div class="postFooter center">
+              <div class="col s4">
+                <i class="small material-icons postFooterInteract">thumb_up</i>
+                <p>Like</p>
+              </div>
+              <div class="col s4">
+                <i class="small material-icons postFooterInteract">comment</i>
+                <p>Comment</p>
+              </div>
+              <div class="col s4">
+                <i class="small material-icons postFooterInteract">share</i>
+                <p>Share</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
-
+        </div> <!-- Status and posts -->
+      </div> <!-- Container -->
+    </div> <!-- ContentArea -->
 
       <!-- Materialize JS -->
-      <script type="text/javascript" src="./js/materialize.min.js"></script>
+    <script type="text/javascript" src="./js/materialize.min.js"></script>
   </body>
   <footer>
+    <hr>
     <div class="footer">
       <div class="container">
         <div class="row">

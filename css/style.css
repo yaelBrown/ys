@@ -7,6 +7,10 @@
    txt: #FAFAFA
 */
 
+.border{
+  border: 1px solid #000;
+}
+
 body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   background-color: #212121;
@@ -25,6 +29,10 @@ h3 {
   color: #212121;
 }
 
+h5 {
+  color: #000;
+}
+
 input {
   color: #ffffff;
 }
@@ -34,4 +42,8 @@ footer h3 {
   bottom: 0;
   color: #fff;
   clear: both;
+}
+
+hr {
+  border-top: .5px solid #fff;
 }
