@@ -13,37 +13,12 @@
 
 body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
-  background-color: #212121;
+  background-color: #fff;
   -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
 }
 
-h1 {
-  color: #FAFAFA;
-  margin-top: 30px;
-  text-align: center;
-}
-
-h3 {
-  color: #212121;
-}
-
-h5 {
-  color: #000;
-}
-
-input {
-  color: #ffffff;
-}
-
-footer h3 {
-  vertical-align: bottom;
-  bottom: 0;
-  color: #fff;
-  clear: both;
-}
-
-hr {
-  border-top: .5px solid #fff;
+.footer {
+  text-align: left;
 }

@@ -65,3 +65,7 @@ h6 {
 .testBox2:hover {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
+
+.code {
+  padding-top: 100px;
+}

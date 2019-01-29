@@ -1,243 +1,27 @@
-/* 
-1. NavBar
-2. SideBar
-3. Content Area
-4. Footer
-*/
-
-body {
-  background-color: #fff !important; 
-  color: #000 !important;
+input.feed-search {
+  width: 80% !important;  
 }
 
-p {
-  color: #000;
-}
-
-.material-icons {
-  color: #000;
-}
-
-img.profilePicSM {
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
-  float: left;
-  display: inline-block;
-  clear: both;
-}
-/*
-===========================================
-1. NavBar
-===========================================
-*/
-
-.wrapper {
-  display: block;
-}
-
-nav {
-  background-color: #999;
-  color: #949494;
-  z-index: 100;
-}
-
-.nav-wrapper {
-  color: #fff;
-  height: 50px;
-}
-
-nav i {
-  font-size: 1em;
-}
-
-i.right {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.mdc-text-field {
-  width: 400px;
-  display: inline-block;
-}
-
-/*
-===========================================
-2. SideBar
-===========================================
-*/
-
-.sidebar {
-  position: fixed;
-  height: auto;
-  width: 150px;
-  clear; both;
-  margin-top: 64 px;
-  left: 0;
-  margin: 0;
-  z-index: 1;
-  display: inline-block;
-}
-
-.sidebarText {
-  letter-spacing: 1.5px;
-  font-size: .4 em;
-}
-
-.sidebarProfilePic {
+.rightNav {
   position: relative;
-  top: 30px;
-  left: 10px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  padding: 0px;
-  margin: 10px;
+  right: 0;
 }
 
-.sidebarUsername{
-  letter-spacing: 1px;
-  margin-top: 2em;
-  margin-bottom: 1.4em;
-}
-.sidebar-header {
-  font-weight: 400;
-  font-size: 1.5em;
-  text-align: center;
-
-}
-.list-unstyled {
-  color: #000;
+.spaceBetweenPosts {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-ul.list-unstyled.components {
-  text-align: center;
-  color: #949494;
+.posts {
+  margins: auto;
+  left: 50%;
+
 }
 
-ul.list-unstyled.components p {
-  padding-left: 20px;
+.card {
+  width: 30rem;
 }
 
-.overlay {
-  display: none;
-  position: fixed;
-  /* full screen */
-  width: 100vw;
-  height: 100vh;
-  /* transparent black */
-  background: rgba(0, 0, 0, 0.7);
-  /* middle layer, i.e. appears below the sidebar */
-  z-index: 998;
-  opacity: 0;
-  /* animate the transition */
-  transition: all 0.5s ease-in-out;
-}
-/* display .overlay when it has the .active class */
-
-.overlay.active {
-  display: block;
-  opacity: 1;
-}
-
-/*
-===========================================
-3. Content Area
-===========================================
-*/
-
-.contentArea {
-  margin-top: 0px;
-  margin-left: 0px;
-  margin: 0 auto;
-  padding-top: 0px;
-  border-top: 0px;
-  color: #fff;
-}
-
-.status {
-  margin-top: 50px;
-  padding-top: 30px;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-}
-
-.status-icons { 
-  padding-left: 0px;
-  padding-right: 0px;
-  letter-spacing: 15px;
-}
-
-.post {
-  vertical-align: top;
-  background-color: #f7f7f7;
-  height: auto;
-  border-radius: 10px;
-}
-.postHeader {
-  overflow: hidden;
-  height: 40px;
-}
-
-p.posterName {
-  height: 40px;
-  width: auto;
-  vertical-align: top;
-  padding-top: 9px;
-  padding-left: 50px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  float: left;
-}
-
-p.posterTimePosted {
-  height: 40px;
-  width: auto;
-  vertical-align: middle;
-  padding-top: 9px;
-  padding-right: 15px;
-  letter-spacing: 1px;
-  font-size: .8 em;
-  font-weight: 300;
+.card-Right {
   text-align: right;
-  float: right;
 }
-
-.postBody {
-  padding-left: 90px;
-  height: 100px;  
-  vertical-align: center;
-}
-
-p.postBodyText {
-  font-size: 2em;
-  font-weight: 200;
-  letter-spacing: 1px;
-}
-
-.postFooter {
-  height: 60px;
-  padding-top: 20px;
-  vertical-align: center;
-}
-
-/*
-===========================================
-4. Footer
-===========================================
-*/
-
-footer {
-  position: float;
-  left: 0px;
-}
-
-footer h3 {
-  color: #000;
-  margin-top: 5px;
-}
-
-
-
-
-

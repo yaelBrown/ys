@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/materialize.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Main Style.css file -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -16,10 +17,6 @@
     
     <!-- Roboto google font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    
-    <!-- Materialize icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
 
     <!-- Shortcut Icon -->
     <link rel="shortcut icon" href="img/yb-logo.png">
@@ -27,94 +24,130 @@
     <title>YaelSpace - a place for Yael's friends. - Login/Signup</title>
   </head>
   <body>
-
     <!-- Navbar -->
-    <nav>
-      <div class="nav-wrapper">
+    <div class="containter">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand mr-auto" href="#">YaelSpace</a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mood</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Messages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Notifications</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#"><i class="small material-icons right">mood</i></a></li>
-          <li><a href="#"><i class="small material-icons right">notifications</i></a></li>
-          <li><a href="#"><i class="small material-icons right">messages</i></a></li>
+    <!-- Container for body -->
+    <div class="container">
+
+    <!-- Left navbar and section-->
+    <div class="row">
+      <div class="col-md-3">
+        <h3>Profile Picture</h3>
+        <h4>User Name</h4>
+        <hr />
+
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link" href="#">View Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Messenger</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Notifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Friends</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pictures</a></li>
         </ul>
       </div>
-    </nav>
 
+      <!-- Center Section -->
+      <div class="col-md-6">
+        <form class="form-inline feed-search">
+          <input class="form-control mr-sm-2 feed-search" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
 
-    <!-- Content area  -->
-    <div class="contentArea">
-      <div class="containder">
-        <div class="statusAndPosts">
+        <div class="spaceBetweenPosts"></div>
 
-        <!-- Left SideBar -->
-        <div class="row">
-          <div class="sidebar col s2 left">
-            <img class="sidebarProfilePic" src="img/profilePics/jasonMason.jpg">
-            <h5 class="sidebarUsername">Jason Mason</h5>
-            <p class="sidebarText">View Profile</p>
-            <p class="sidebarText">News Feed</p>
-            <p class="sidebarText">Messenger</p>
-            <p class="sidebarText">Notifications</p>
-            <p class="sidebarText">Friends</p>
-            <p class="sidebarText">Pictures</p>
-          </div>
-        </div>
-        
-        <!-- Update status -->
-        <div class="row">
-          <form class="col s8 offset-s2">
-            <div class="row">
-              <div class="input-field col s12 status">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">Status</label>
-                <div class="status-icons right">
-                  <i class="material-icons">mood</i>
-                  <i class="material-icons">photo_camera</i>
-                  <i class="material-icons">send</i>
+        <div class="posts">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <p>Profile Picture</p>
+                  <p>User Name</p>
+                </div>
+                <div class="col">
+                  <p class="card-Right">MMM DD, YYYY</p>
                 </div>
               </div>
-            </div>
-          </form>
-        </div>
+              <p class="card-text">Some quick example text to build on the sample post and make up the bulk of the card's content.</p>
 
-        <!-- Display Post -->
-        <div class="row">
-          <div class="post col s8 offset-s2">
-            <div class="postHeader">
-              <img class="profilePicSM" src="./img/profilePics/jasonMason.jpg">
-              <p class="posterName">Jason Mason</p>
-              <p class="posterTimePosted right">8:30 am</p>
-            </div>
-            <hr>
-            <div class="postBody">
-              <p class="postBodyText">Hello everyone!</p>
-            </div>
-            <hr>
-            <div class="postFooter center">
-              <div class="col s4">
-                <i class="small material-icons postFooterInteract">thumb_up</i>
-                <p>Like</p>
-              </div>
-              <div class="col s4">
-                <i class="small material-icons postFooterInteract">comment</i>
-                <p>Comment</p>
-              </div>
-              <div class="col s4">
-                <i class="small material-icons postFooterInteract">share</i>
-                <p>Share</p>
-              </div>
+              <hr/>
+
+              <a href="#" class="card-link">Link</a>
+              <a href="#" class="card-link">Reply</a>
+              <a href="#" class="card-link">Share</a>
+              <a href="#" class="card-link">Save</a>
             </div>
           </div>
+
+          <div class="spaceBetweenPosts"></div>
+          
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <p>Profile Picture</p>
+                  <p>User Name</p>
+                </div>
+                <div class="col">
+                  <p class="card-Right">MMM DD, YYYY</p>
+                </div>
+              </div>
+              <p class="card-text">Some quick example text to build on the sample post and make up the bulk of the card's content.</p>
+
+              <hr/>
+
+              <a href="#" class="card-link">Link</a>
+              <a href="#" class="card-link">Reply</a>
+              <a href="#" class="card-link">Share</a>
+              <a href="#" class="card-link">Save</a>
+            </div>
+          </div>
+
         </div>
+      </div> <!-- End of center section -->
+
+      <!-- Right navbar-->
+      <div class="col-md-3 rightNav">
+        <ul class="nav nav-pills nav-stacked">
+          <li class="nav-header">Right Navbar<br/></li>
+          <li><h4>Other content will go here<br/></h4></li>
+          <li class="divider"></li>
+        </ul>
+      </div>
 
 
-        </div> <!-- Status and posts -->
-      </div> <!-- Container -->
-    </div> <!-- ContentArea -->
+    </div> <!-- First Row -->
 
-      <!-- Materialize JS -->
-    <script type="text/javascript" src="./js/materialize.min.js"></script>
+
+
+
+
+
+    </div> <!-- Container -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
+
   <footer>
     <hr>
     <div class="footer">
