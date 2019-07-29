@@ -14,12 +14,12 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/signup.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <title> </title>
+    <title>Signup Page</title>
   </head>
   <body>
     <!-- Main Section -->
@@ -27,37 +27,16 @@
       <h1>Signup Page</h1>
 
       <!-- Signup Form -->
-      <form>
-
-        <!-- username -->
-        <div>
-          <input type="text" name="username" placeholder="username">
-        </div>
-
-        <!-- name -->
-        <div>
-          <input type="text" name="name" placeholder="name">
-        </div>
-
-        <!-- password -->
-        <div>
-          <input type="text" name="password" placeholder="password">
-        </div>
-
-        <!-- email -->
-        <div>
-          <input type="text" name="email" placeholder="email">
-        </div>
-
-        <div>
-          <button>Submit</button>
-        </div>
-
-        <div>
-          <button>Reset</button>
-        </div>
+      <form method="POST" action="https://request-inspector.glitch.me/">
+        <input type="text" name="username" placeholder="username"></br>
+        <input type="text" name="name" placeholder="name"></br>
+        <input type="text" name="password" placeholder="password"></br>
+        <input type="text" name="email" placeholder="email"></br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
       </form>
-
+      
+      <a href="./login.html"></a>
     </main>
 
     <!-- Optional JavaScript -->
