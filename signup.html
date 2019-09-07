@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="text/stylesheet" href="./css/style.css">
+    <link rel="text/stylesheet" href="./css/signup.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -28,19 +28,49 @@
 
       <!-- Signup Form -->
       <form method="POST" action="https://request-inspector.glitch.me/">
-        <input type="text" name="username" placeholder="username"></br>
-        <input type="text" name="firstname" placeholder="first name"></br>
-        <input type="text" name="lastname" placeholder="last name"></br>
-        <input type="text" name="password" placeholder="password"></br>
-        <input type="text" name="email" placeholder="email"></br>
-        <button type="submit">Submit</button>
+        <input type="text" name="username" id="username" placeholder="username" required></br>
+        <input type="text" name="firstname" id="firstname" placeholder="first name" required></br>
+        <input type="text" name="lastname" id="lastname" placeholder="last name" required></br>
+        <input type="text" name="password" id="password" placeholder="password" required></br>
+        <input type="text" name="email" id="email" placeholder="email" required></br>
+        <button type="submit" onclick="addToDB();">Submit</button>
         <button type="reset">Reset</button>
       </form>
-      
+
       <a href="./login">Login</a>
     </main>
 
     <!-- Optional JavaScript -->
+    <script>
+      let usr = document.getElementById("username").value;
+      let fname = document.getElementById("firstname").value;
+      let lname = document.getElementById("lastname").value;
+      let pwd = document.getElementById("password").value;
+      let mail = document.getElementById("email").value;
+
+      let addToDB = () => {
+        login.create({    // login is not defined
+          username: usr,
+          firstname: fname,
+          lastname: lname,
+          password: pwd,
+          email: mail
+        }, (error, data) => {
+          if (error) {
+            console.log("Problem logging document to the collection");
+            console.log(data);
+          } else {
+            console.log("Added Data to Collection");
+            console.log(data);
+          };
+        });
+
+        console.log("addToDB was ran");
+      };
+
+
+    </script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
