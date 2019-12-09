@@ -3,7 +3,7 @@ const app = express()
 const path = require('path');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
-const port = 3000
+const port = 8080
 
 // Connect db
 const mysql = require('mysql');
