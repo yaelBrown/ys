@@ -1,8 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './css/App.css';
-import Login from './components/Login';
-
+import Login from './components/login/Login';
 
 function App() {
   return (
@@ -13,6 +12,3 @@ function App() {
 }
 
 export default App;
-
-
-
