@@ -1,12 +1,11 @@
-create database ys; 
+create database ys;
 
 use ys;
 
 show tables;
 
 CREATE TABLE Profile (
-	profileID INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (profileID),
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT Primary Key,
     fName varchar(50),
     lName varchar(50),
     birth_day date,
@@ -17,11 +16,11 @@ CREATE TABLE Profile (
 );
 
 CREATE TABLE Comments (
-	CommentID INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (CommentID),
     authorID int NOT NULL,
     recipientID int NOT NULL,
-    photoID int, 
+    photoID int,
     Comment varchar(255),
     likes int,
     dislikes int,
@@ -30,7 +29,7 @@ CREATE TABLE Comments (
 );
 
 CREATE TABLE Albums (
-	AlbumID INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     Primary Key (AlbumID),
     ProfileID int NOT NULL,
     AlbumTitle varchar(100),
@@ -39,7 +38,7 @@ CREATE TABLE Albums (
 );
 
 CREATE TABLE Photos (
-	PhotoID int UNSIGNED NOT NULL AUTO_INCREMENT,
+	id int UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (PhotoID),
     AlbumID int,
     AuthorID int,
