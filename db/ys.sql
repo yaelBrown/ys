@@ -4,49 +4,48 @@ use ys;
 
 show tables;
 
-CREATE TABLE Profile (
-	id INT UNSIGNED NOT NULL AUTO_INCREMENT Primary Key,
-    fName varchar(50),
-    lName varchar(50),
-    birth_day date,
-    email varchar(50) NOT NULL,
-    location varchar(100),
-    avatarPic varchar(200),
-    coverPic varchar(200)
-);
+CREATE TABLE users (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `fName` varchar(50) DEFAULT NULL,
+  `lName` varchar(50) DEFAULT NULL,
+  `birth_day` date DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `avatarPic` varchar(200) DEFAULT NULL,
+  `coverPic` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
-CREATE TABLE Comments (
-	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (CommentID),
-    authorID int NOT NULL,
-    recipientID int NOT NULL,
-    photoID int,
-    Comment varchar(255),
-    likes int,
-    dislikes int,
-    isPhoto bool,
-    commentDate datetime
-);
+CREATE TABLE `comments` (
+  `CommentID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `authorID` int(11) NOT NULL,
+  `recipientID` int(11) NOT NULL,
+  `photoID` int(11) DEFAULT NULL,
+  `Comment` varchar(255) DEFAULT NULL,
+  `likes` int(11) DEFAULT NULL,
+  `dislikes` int(11) DEFAULT NULL,
+  `isPhoto` tinyint(1) DEFAULT NULL,
+  `commentDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`CommentID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
-CREATE TABLE Albums (
-	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    Primary Key (AlbumID),
-    ProfileID int NOT NULL,
-    AlbumTitle varchar(100),
-    CollaboratorID int,
-    albumDate datetime
-);
+CREATE TABLE `albums` (
+  `AlbumID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ProfileID` int(11) NOT NULL,
+  `AlbumTitle` varchar(100) DEFAULT NULL,
+  `CollaboratorID` int(11) DEFAULT NULL,
+  `albumDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`AlbumID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
-CREATE TABLE Photos (
-	id int UNSIGNED NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (PhotoID),
-    AlbumID int,
-    AuthorID int,
-    likes int,
-    dislikes int,
-    photoDate datetime
-);
+CREATE TABLE `photos` (
+  `PhotoID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `AlbumID` int(11) DEFAULT NULL,
+  `AuthorID` int(11) DEFAULT NULL,
+  `likes` int(11) DEFAULT NULL,
+  `dislikes` int(11) DEFAULT NULL,
+  `photoDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`PhotoID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 show tables;
-
-describe profile
