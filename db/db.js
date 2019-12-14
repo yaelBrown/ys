@@ -7,4 +7,12 @@ const db = mysql.createConnection({
   database: "ys"
 });
 
+db.connect((err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("MySQL Connected!");
+  }
+});
+
 module.exports = db;
