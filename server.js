@@ -30,4 +30,4 @@ app.use('/login', routeUsers);
 //   res.sendStatus(418);
 // });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
