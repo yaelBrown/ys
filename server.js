@@ -20,7 +20,6 @@ app.use('/login', routeUsers);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
-// add test bcrypt
 // add post method to login
 // create register view in ys/ys
 // use react router to route to that view
