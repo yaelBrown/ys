@@ -9,17 +9,15 @@ import './navbar.css';
 export default class Navbar extends Component {
   render() {
     return (
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/login">login</Link></li>
-              <li><Link to="/register">register</Link></li>
-            </ul>
-          </nav>
-        </div>
-      </Router>
+      <div>
+        <nav>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/login">login</Link></li>
+            <li><Link to="/register">register</Link></li>
+          </ul>
+        </nav>
+      </div>
     )
   }
 }
