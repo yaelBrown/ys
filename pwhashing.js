@@ -1,42 +1,29 @@
+// Bcrypt js sandbox, using the bcrypt node package
 const bcrypt = require('bcryptjs');
 
 let pw = 'password';
+let userPw = "";
+let inputPw = "";
 
 console.log('pw is ' + pw);
 
-
-const hashPw = (pw) => {
-  let out = bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(pw, salt, (err, hash) => {
-      if (err) throw err;
-    });
-  });
-  return out;
-};
-
-let hpw;
-
-async function testHashPw() {
-  try {
-    hpw = await hashPw(pw);
-    return hpw;
-  } catch (e) {
-    console.log(e);
-  }
+// hashing function
+const hashPassword = async function(p) {
+    console.log(bcrypt.hash(p ,10));
+    var hashPwd = await bcrypt.hash(p,10);
+    console.log("hashPwd is " + hashPwd);
+    return hashPwd;
 }
 
-testHashPw().then((p) => {
-  console.log("hashed pw is " + p);
-}).catch((e) => {
-  console.log("there was error " + e);
-});
+hashPassword(pw);
 
+// Compare passwords
+async function comparePasswords(ipw, upw) {
+  const isMatch = await bcrypt.compare(ipw, upw);
 
+  (isMatch) ? console.log("passwords match") : console.log("passwords dont match");
+  return isMatch;
+}
 
-// let verify1 = bcrypt.compare(pw, hpw);
-
-// console.log(verify1); // should be false-y
-
-// let verify2 = bcrypt.compare(hpw, hpw);
-
-// console.log(verify2); // should be true-fy
+console.log("userpw before running compare = " + userPw);
+console.log(comparePasswords(inputPw, userPw));
