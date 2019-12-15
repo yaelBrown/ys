@@ -5,7 +5,7 @@ export default class Login extends Component {
   render() {
     return (
       <div className="login-form">
-        <form action="/login" method="post">
+        <form action="http://localhost:8080/login" method="post">
           <h1>Login</h1>
           <input type="text" id="username" name="username" placeholder="login" required></input><br/>
           <input type="password" id="password" name="password" placeholder="password" required></input><br/>

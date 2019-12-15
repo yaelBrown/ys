@@ -15,4 +15,9 @@ router.get('/', async (req, res) => {
   });
 });
 
+router.post('/', async (req, res) => {
+  console.log("post to login");
+  res.sendStatus(418);
+});
+
 module.exports = router;
