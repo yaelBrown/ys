@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(fileUpload());
 
 
-app.use('/login', routeUsers);
+app.use('/api/users', routeUsers);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 

@@ -7,7 +7,7 @@ export default class Login extends Component {
       <div className="login-form">
         <form action="http://localhost:8080/login" method="post">
           <h1>Login</h1>
-          <input type="text" id="username" name="username" placeholder="login" required></input><br/>
+          <input type="email" id="username" name="username" placeholder="email@address.com" required></input><br/>
           <input type="password" id="password" name="password" placeholder="password" required></input><br/>
           <button type="submit">Login</button>
           <br/>

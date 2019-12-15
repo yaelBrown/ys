@@ -5,11 +5,11 @@ use ys;
 show tables;
 
 CREATE TABLE users (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT UNIQUE,
   `fName` varchar(50) DEFAULT NULL,
   `lName` varchar(50) DEFAULT NULL,
   `birth_day` date DEFAULT NULL,
-  `email` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL UNIQUE,
   `location` varchar(100) DEFAULT NULL,
   `avatarPic` varchar(200) DEFAULT NULL,
   `coverPic` varchar(200) DEFAULT NULL,
