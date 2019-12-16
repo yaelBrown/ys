@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcryptjs');
 
 const db = require('../db/db');
+
+const hashPassword = async function(p) {
+  var hashPwd = await bcrypt.hash(p,10);
+  return hashPwd;
+}
 
 // Get all users
 router.get('/', async (req, res) => {
@@ -37,9 +43,18 @@ router.post('/checkEmail/:email', async (req, res) => {
 })
 
 // Register a user
-router.post('/', async (req, res) => {
-  console.log("post to login");
-  res.sendStatus(418);
+router.post('/register', async (req, res) => {
+  let newUser = req.body;
+
+  newUser.password = await hashPassword(req.body.password);
+
+  let sql = `INSERT INTO users (fName, lName, email, password, location, birth_day) values ('${newUser.fName}', '${newUser.lName}', '${newUser.email}', '${newUser.password}', '${newUser.location}', '${newUser.birth_day}')`;
+
+  let query = db.query(sql, (err, result) => {
+    if (err) throw err;
+    console.log(`${newUser.email} was added to Users.`);
+    res.sendStatus(200);
+  })
 });
 
 module.exports = router;
