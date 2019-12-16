@@ -8,7 +8,6 @@ export default class Register extends Component {
     return (
       <div className="register-form">
         <form action="http://localhost:8080/api/users/register" method="post">
-        {/* <form action="https://request-inspector.glitch.me/" method="post"> */}
           <h1>Register a new user</h1>
           <input type="text" id="fName" name="fName" placeholder="First Name"/>
           <input type="text" id="lName" name="lName" placeholder="Last Name"/>
