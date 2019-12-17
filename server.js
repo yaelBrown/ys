@@ -20,8 +20,4 @@ app.use('/api/users', routeUsers);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
-// add post method to login
-// create register view in ys/ys
-// use react router to route to that view
-
 // use jwt to add logged in user to cookies/session

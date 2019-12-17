@@ -9,6 +9,13 @@ const hashPassword = async function(p) {
   return hashPwd;
 }
 
+async function comparePasswords(ipw, upw) {
+  const isMatch = await bcrypt.compare(ipw, upw);
+
+  (isMatch) ? console.log("passwords match") : console.log("passwords dont match");
+  return isMatch;
+}
+
 // Get all users
 router.get('/', async (req, res) => {
   const sql = 'SELECT * FROM users';
@@ -58,3 +65,23 @@ router.post('/register', async (req, res) => {
 });
 
 module.exports = router;
+
+// Login
+router.post('/login', async (req, res) => {
+  let user = req.body.username;
+  let pw = req.body.password;
+
+  let sql = `SELECT * FROM users WHERE email = '${user}'`;
+  let query = db.query(sql, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+
+    let isValidUser = comparePasswords(pw, result.password);
+
+    if (isValidUser) {
+      console.log("Valid login");
+    } else {
+      console.log("Invalid login");
+    }
+  })
+})
