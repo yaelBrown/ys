@@ -77,22 +77,28 @@ router.post('/login', async (req, res) => {
   console.log("pw is " + pw);
 
   let sql = `SELECT * FROM users WHERE email = '${user}'`;
-  let query = await db.query(sql, (err, result) => {
-    if (err) throw err;
+  try {
+    let query = await db.query(sql, (err, result) => {
+      if (err) {
+        console.error(err);
+      } else {
+        comparePasswords(pw, result[0].password)
+          .then((resu) => {
+            isValidUser = resu;
+            console.log("isValidUser is " + isValidUser);
 
-    comparePasswords(pw, result[0].password)
-      .then((resu) => {
-        isValidUser = resu;
-        console.log("isValidUser is " + isValidUser);
-
-        if (isValidUser) {
-          console.log("Valid login");
-          res.redirect('http://localhost:3000/');
-        } else {
-          console.log("Invalid login");
-          res.redirect('http://localhost:3000/login');
-        }
-      })
-      .catch((err) => console.log(err))
-  });
+            if (isValidUser) {
+              console.log("Valid login");
+              res.redirect('http://localhost:3000/');
+            } else {
+              console.log("Invalid login");
+              res.redirect('http://localhost:3000/login');
+            }
+          })
+          .catch((err) => console.log(err));
+      }
+    });
+  } catch (e) {
+    res.redirect('http://localhost:3000/login');
+  }
 });

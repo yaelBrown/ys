@@ -19,8 +19,10 @@ app.use('/api/users', routeUsers);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-// Get login to work
 // use jwt to add logged in user to cookies/session
+
+
+// Create another page for being logged into the site (with react and dashboard.js)
 
 // Create logged in portion of site, only visable if user is logged in
 // create different navbar for logged in user
