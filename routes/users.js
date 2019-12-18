@@ -12,7 +12,7 @@ const hashPassword = async function(p) {
 async function comparePasswords(ipw, upw) {
   const isMatch = await bcrypt.compare(ipw, upw);
 
-  (isMatch) ? console.log("passwords match") : console.log("passwords dont match");
+  // (isMatch) ? console.log("passwords match") : console.log("passwords dont match");
   return isMatch;
 }
 
@@ -71,17 +71,28 @@ router.post('/login', async (req, res) => {
   let user = req.body.username;
   let pw = req.body.password;
 
+  let loggedInUser;
+  let isValidUser;
+
+  console.log("pw is " + pw);
+
   let sql = `SELECT * FROM users WHERE email = '${user}'`;
-  let query = db.query(sql, (err, result) => {
+  let query = await db.query(sql, (err, result) => {
     if (err) throw err;
-    console.log(result);
 
-    let isValidUser = comparePasswords(pw, result.password);
+    comparePasswords(pw, result[0].password)
+      .then((resu) => {
+        isValidUser = resu;
+        console.log("isValidUser is " + isValidUser);
 
-    if (isValidUser) {
-      console.log("Valid login");
-    } else {
-      console.log("Invalid login");
-    }
-  })
-})
+        if (isValidUser) {
+          console.log("Valid login");
+          res.redirect('http://localhost:3000/');
+        } else {
+          console.log("Invalid login");
+          res.redirect('http://localhost:3000/login');
+        }
+      })
+      .catch((err) => console.log(err))
+  });
+});

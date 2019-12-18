@@ -19,5 +19,9 @@ app.use('/api/users', routeUsers);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-
+// Get login to work
 // use jwt to add logged in user to cookies/session
+
+// Create logged in portion of site, only visable if user is logged in
+// create different navbar for logged in user
+// create sidebar
