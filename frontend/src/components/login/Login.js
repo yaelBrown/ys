@@ -16,23 +16,30 @@ export default class Login extends Component {
     this.handleLogin = this.handleLogin.bind(this);
   }
 
-
+  validateEmailHelper(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
 
   handleLogin(e) {
     console.log("login button was clicked");
     console.log(this.state.email);
     console.log(this.state.password);
 
-    Axios.post("http://localhost:8080/api/users/login",
-    {
-      email: this.state.email,
-      password: this.state.password
-    },
-    { withCredentials: false })
-    .then(res => {
-      console.log("axios login response", res);
-    })
-    .catch(err => console.log("login error", err));
+    if (this.validateEmailHelper(this.state.email)) {
+      Axios.post("http://localhost:8080/api/users/login",
+        {
+          email: this.state.email,
+          password: this.state.password
+        },
+        { withCredentials: false })
+      .then(res => {
+        console.log("axios login response", res);
+      })
+      .catch(err => console.log("login error", err));
+    } else {
+      return;
+    }
 
     e.preventDefault();
   };
@@ -42,7 +49,6 @@ export default class Login extends Component {
       [event.target.name]: event.target.value
     });
   }
-
 
   render() {
     return (
