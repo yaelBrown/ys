@@ -4,8 +4,6 @@ import Axios from 'axios';
 import './login.css';
 
 export default class Login extends Component {
-  state = {};
-
   constructor(props) {
     super(props);
     this.state = {
@@ -22,18 +20,15 @@ export default class Login extends Component {
 
   handleLogin(e) {
     console.log("login button was clicked");
+    console.log(this.state.email);
+    console.log(this.state.password);
 
     Axios.post("http://localhost:8080/api/users/login",
     {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-      user: {
-        email: this.state.email,
-        password: this.state.password
-      }
+      email: this.state.email,
+      password: this.state.password
     },
-    { withCredentials: true })
+    { withCredentials: false })
     .then(res => {
       console.log("axios login response", res);
     })

@@ -68,7 +68,7 @@ module.exports = router;
 
 // Login
 router.post('/login', async (req, res) => {
-  let user = req.body.username;
+  let email = req.body.email;
   let pw = req.body.password;
 
   let loggedInUser;
@@ -76,7 +76,7 @@ router.post('/login', async (req, res) => {
 
   console.log("pw is " + pw);
 
-  let sql = `SELECT * FROM users WHERE email = '${user}'`;
+  let sql = `SELECT * FROM users WHERE email = '${email}'`;
   try {
     let query = await db.query(sql, (err, result) => {
       if (err) {
