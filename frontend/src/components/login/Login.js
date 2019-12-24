@@ -1,31 +1,77 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
+
 import './login.css';
 
 export default class Login extends Component {
+  state = {};
+
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      password: ""
-    }
+      password: "",
+      loginErrors: ""
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
 
 
-
-  login(e) {
-    e.preventDefault();
+  handleLogin(e) {
     console.log("login button was clicked");
+
+    Axios.post("http://localhost:8080/api/users/login",
+    {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+      user: {
+        email: this.state.email,
+        password: this.state.password
+      }
+    },
+    { withCredentials: true })
+    .then(res => {
+      console.log("axios login response", res);
+    })
+    .catch(err => console.log("login error", err));
+
+    e.preventDefault();
+  };
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   }
+
 
   render() {
     return (
       <div className="login-form">
         <div className="login-wrapper">
           <h1>Login</h1>
-          <input type="email" id="username" name="username" placeholder="email@address.com" required></input><br/>
-          <input type="password" id="password" name="password" placeholder="password" required></input><br/>
-          <button type="button" id="login" onClick={this.login}>Login</button>
+
+          <input
+          type="email"
+          name="email"
+          placeholder="email@address.com"
+          value={this.state.email}
+          onChange={this.handleChange}
+          required></input><br/>
+
+          <input
+          type="password"
+          name="password"
+          placeholder="password"
+          value={this.state.password}
+          onChange={this.handleChange}
+          required></input><br/>
+
+          <button type="button" id="login" onClick={this.handleLogin}>Login</button>
           <br/>
           <p>Not a user? <a href="/register">Click here</a> to register.</p>
         </div>

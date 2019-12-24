@@ -89,10 +89,11 @@ router.post('/login', async (req, res) => {
 
             if (isValidUser) {
               console.log("Valid login");
-              res.redirect('http://localhost:3000/');
+              res.json(result[0]);
+              // res.redirect('http://localhost:3000/');
             } else {
               console.log("Invalid login");
-              res.redirect('http://localhost:3000/login');
+              res.json("invalid login");
             }
           })
           .catch((err) => console.log(err));
