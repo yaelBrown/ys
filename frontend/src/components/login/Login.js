@@ -35,8 +35,8 @@ export default class Login extends Component {
         },
         { withCredentials: false })
       .then(res => {
-        console.log("axios login response", res.data);
         localStorage.setItem('ys-jwt', res.data);
+        this.props.history.push('/dashboard');
       })
       .catch(err => console.log("login error", err));
     } else {
