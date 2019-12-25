@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const port = 8080
 const cors = require('cors');
+const dotenv = require('dotenv').config();
 
 const routeUsers = require('./routes/users');
 
@@ -15,9 +16,6 @@ app.use(cors());
 app.use('/api/users', routeUsers);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-
-// use jwt to add logged in user to cookies/session
-
 
 // Create another page for being logged into the site (with react and dashboard.js)
 

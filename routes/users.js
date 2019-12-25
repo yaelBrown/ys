@@ -86,8 +86,8 @@ router.post('/login', async (req, res) => {
 
             if (isValidUser) {
               console.log("Valid login");
-              const payload = result[0]
-              const token = jwt.sign(payload, process.env.SECRET_OR_KEY);
+              const payload = JSON.stringify(result[0]);
+              const token = jwt.sign(payload, process.env.YSJWT);
               res.send(token)
             } else {
               console.log("Invalid login");
