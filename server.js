@@ -1,10 +1,11 @@
+require('dotenv').config();
+
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const port = 8080
 const cors = require('cors');
-const dotenv = require('dotenv').config();
 
 const routeUsers = require('./routes/users');
 
@@ -22,4 +23,3 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 // Create logged in portion of site, only visable if user is logged in
 // create different navbar for logged in user
 // create sidebar
-
