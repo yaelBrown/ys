@@ -34,5 +34,8 @@
     "npm": "^6.13.4",
     "path": "^0.12.7",
     "prebuild": "^9.1.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }

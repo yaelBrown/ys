@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const db = require('../db/db');
 
@@ -71,10 +72,7 @@ router.post('/login', async (req, res) => {
   let email = req.body.email;
   let pw = req.body.password;
 
-  let loggedInUser;
   let isValidUser;
-
-  console.log("pw is " + pw);
 
   let sql = `SELECT * FROM users WHERE email = '${email}'`;
   try {
@@ -85,12 +83,12 @@ router.post('/login', async (req, res) => {
         comparePasswords(pw, result[0].password)
           .then((resu) => {
             isValidUser = resu;
-            console.log("isValidUser is " + isValidUser);
 
             if (isValidUser) {
               console.log("Valid login");
-              res.json(result[0]);
-              // res.redirect('http://localhost:3000/');
+              const payload = result[0]
+              const token = jwt.sign(payload, process.env.SECRET_OR_KEY);
+              res.send(token)
             } else {
               console.log("Invalid login");
               res.json("invalid login");

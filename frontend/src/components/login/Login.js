@@ -22,6 +22,7 @@ export default class Login extends Component {
   }
 
   handleLogin(e) {
+    e.preventDefault();
     console.log("login button was clicked");
     console.log(this.state.email);
     console.log(this.state.password);
@@ -34,19 +35,19 @@ export default class Login extends Component {
         },
         { withCredentials: false })
       .then(res => {
-        console.log("axios login response", res);
+        console.log("axios login response", res.data);
+        localStorage.setItem('ys-jwt', res.data);
       })
       .catch(err => console.log("login error", err));
     } else {
       return;
     }
 
-    e.preventDefault();
   };
 
-  handleChange(event) {
+  handleChange(e) {
     this.setState({
-      [event.target.name]: event.target.value
+      [e.target.name]: e.target.value
     });
   }
 
