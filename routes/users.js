@@ -28,6 +28,8 @@ router.get('/', async (req, res) => {
   });
 });
 
+
+
 // Check if email already exists for register and login
 router.post('/checkEmail/:email', async (req, res) => {
   const sql = `SELECT * FROM users WHERE EMAIL = '${req.params.email}' LIMIT 1`;
@@ -83,7 +85,6 @@ router.post('/login', async (req, res) => {
         comparePasswords(pw, result[0].password)
           .then((resu) => {
             isValidUser = resu;
-
             if (isValidUser) {
               console.log("Valid login");
               const payload = JSON.stringify(result[0]);

@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import { getJwt } from './helpers/jwt';
+import { withRouter, Redirect } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
 
-export default class AuthenticateComponent extends Component {
+class AuthenticateComponent extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      user: undefined
+    let jwt = localStorage.getItem("ys-jwt");
+
+    if (!jwt) {
+      this.state = { user: null };
+      return;
+    } else {
+      this.state = { user: jwt_decode(jwt) };
     }
   }
 
-  componentDidMount() {
-    const jwt = getJwt();
-    console.log(jwt);
-    if (!jwt) this.props.history.push('/login');
-  }
-
   render() {
-    if (this.state.user === undefined) {
+    if (this.state.user === null) {
       return (
-        <div>Loading...</div>
+        <div>
+          <Redirect to="/login"/>
+        </div>
       )
     }
 
@@ -30,3 +32,5 @@ export default class AuthenticateComponent extends Component {
     )
   }
 }
+
+export default withRouter(AuthenticateComponent);
