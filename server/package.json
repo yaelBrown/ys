@@ -4,7 +4,7 @@
   "description": "Remaking Project.",
   "main": "index.js",
   "scripts": {
-    "client": "cd frontend &&  npm run start",
+    "client": "cd .. && cd client &&  npm run start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"nodemon server.js\" \"npm run client\""
   },
