@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const db = require('../db/db');
+const db = require('../config/db');
 
 const hashPassword = async function(p) {
   var hashPwd = await bcrypt.hash(p,10);
