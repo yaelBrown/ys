@@ -12,8 +12,6 @@ const hashPassword = async function(p) {
 
 async function comparePasswords(ipw, upw) {
   const isMatch = await bcrypt.compare(ipw, upw);
-
-  // (isMatch) ? console.log("passwords match") : console.log("passwords dont match");
   return isMatch;
 }
 
@@ -27,8 +25,6 @@ router.get('/', async (req, res) => {
     res.json(results);
   });
 });
-
-
 
 // Check if email already exists for register and login
 router.post('/checkEmail/:email', async (req, res) => {
@@ -55,7 +51,6 @@ router.post('/checkEmail/:email', async (req, res) => {
 // Register a user
 router.post('/register', async (req, res) => {
   let newUser = req.body;
-
   newUser.password = await hashPassword(req.body.password);
 
   let sql = `INSERT INTO users (fName, lName, email, password, location, birth_day) values ('${newUser.fName}', '${newUser.lName}', '${newUser.email}', '${newUser.password}', '${newUser.location}', '${newUser.birth_day}')`;
@@ -66,8 +61,6 @@ router.post('/register', async (req, res) => {
     res.sendStatus(200);
   })
 });
-
-module.exports = router;
 
 // Login
 router.post('/login', async (req, res) => {
@@ -83,22 +76,24 @@ router.post('/login', async (req, res) => {
         console.error(err);
       } else {
         comparePasswords(pw, result[0].password)
-          .then((resu) => {
-            isValidUser = resu;
-            if (isValidUser) {
-              console.log("Valid login");
-              const payload = JSON.stringify(result[0]);
-              const token = jwt.sign(payload, process.env.YSJWT);
-              res.send(token)
-            } else {
-              console.log("Invalid login");
-              res.json("invalid login");
-            }
-          })
-          .catch((err) => console.log(err));
+        .then((resu) => {
+          isValidUser = resu;
+          if (isValidUser) {
+            console.log("Valid login");
+            const payload = JSON.stringify(result[0]);
+            const token = jwt.sign(payload, process.env.YSJWT);
+            res.send(token)
+          } else {
+            console.log("Invalid login");
+            res.json("invalid login");
+          }
+        })
+        .catch((err) => console.log(err));
       }
     });
   } catch (e) {
     res.redirect('http://localhost:3000/login');
   }
 });
+
+module.exports = router;
