@@ -15,13 +15,15 @@ CREATE TABLE users (
   `coverPic` varchar(200) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `followers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT UNIQUE,
   `FollowerID` int(10) NOT NULL,
-  `FolloweeID` int(10) NOT Null
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+  `FolloweeID` int(10) NOT Null,
+  `FollowerName` varchar(101) NOT NULL,
+  `FolloweeName` varchar(101) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `comments` (
   `CommentID` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -34,7 +36,7 @@ CREATE TABLE `comments` (
   `isPhoto` tinyint(1) DEFAULT NULL,
   `commentDate` datetime DEFAULT NULL,
   PRIMARY KEY (`CommentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `albums` (
   `AlbumID` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -43,7 +45,7 @@ CREATE TABLE `albums` (
   `CollaboratorID` int(11) DEFAULT NULL,
   `albumDate` datetime DEFAULT NULL,
   PRIMARY KEY (`AlbumID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `photos` (
   `PhotoID` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -53,6 +55,6 @@ CREATE TABLE `photos` (
   `dislikes` int(11) DEFAULT NULL,
   `photoDate` datetime DEFAULT NULL,
   PRIMARY KEY (`PhotoID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 show tables;
