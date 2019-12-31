@@ -5,6 +5,7 @@ import Index from '../components/index/Index';
 import Login from '../components/login/Login';
 import Dashboard from '../components/dashboard/Dashboard'
 import AuthenticateComponent from '../util/AuthenticateComponent';
+import dashboardLogout from '../components/dashboard/dashboard-logout/dashboard-logout';
 
 export default class Router extends Component {
   render() {
@@ -15,6 +16,7 @@ export default class Router extends Component {
         <Route exact strict path="/register" component={Register} />
         <AuthenticateComponent>
           <Route exact strict path="/dashboard" component={Dashboard} />
+          <Route exact strict path="/logout" component={dashboardLogout} />
         </AuthenticateComponent>
       </Switch>
     )

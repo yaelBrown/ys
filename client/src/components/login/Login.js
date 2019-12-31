@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from '../nav/Navbar';
 import Axios from 'axios';
 
 import './login.css';
@@ -53,31 +54,34 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="login-form">
-        <div className="login-wrapper">
-          <h1>Login</h1>
+      <div>
+        <Navbar/>
+        <div className="login-form">
+          <div className="login-wrapper">
+            <h1>Login</h1>
 
-          <input
-          type="email"
-          name="email"
-          placeholder="email@address.com"
-          value={this.state.email}
-          onChange={this.handleChange}
-          required></input><br/>
+            <input
+            type="email"
+            name="email"
+            placeholder="email@address.com"
+            value={this.state.email}
+            onChange={this.handleChange}
+            required></input><br/>
 
-          <input
-          type="password"
-          name="password"
-          placeholder="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-          required></input><br/>
+            <input
+            type="password"
+            name="password"
+            placeholder="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+            required></input><br/>
 
-          <button type="button" id="login" onClick={this.handleLogin}>Login</button>
-          <br/>
-          <p>Not a user? <a href="/register">Click here</a> to register.</p>
-        </div>
+            <button type="button" id="login" onClick={this.handleLogin}>Login</button>
+            <br/>
+            <p>Not a user? <a href="/register">Click here</a> to register.</p>
+          </div>
       </div>
+    </div>
     )
   }
 }
