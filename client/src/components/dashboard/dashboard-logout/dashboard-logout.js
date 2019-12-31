@@ -11,7 +11,6 @@ export default class dashboardLogout extends Component {
       count: 2,
       redirect: false
     }
-
     this.decrementTime = this.decrementTime.bind(this);
   }
 

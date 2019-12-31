@@ -17,6 +17,12 @@ CREATE TABLE users (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
+CREATE TABLE `followers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT UNIQUE,
+  `FollowerID` int(10) NOT NULL,
+  `FolloweeID` int(10) NOT Null
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
 CREATE TABLE `comments` (
   `CommentID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `authorID` int(11) NOT NULL,
