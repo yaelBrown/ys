@@ -9,7 +9,7 @@ export default class DashboardNav extends Component {
       <div>
         <nav>
           <ul>
-            <li><Link to="/Home">Dashboard</Link></li>
+            <li><Link to="/Dashboard">Dashboard</Link></li>
             <li><Link to="/Messages">Messages</Link></li>
             <li><Link to="/Followers">Followers</Link></li>
             <li><Link to="/Photos">Photos</Link></li>

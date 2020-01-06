@@ -24,7 +24,7 @@ export default class dashboardLogout extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.count == 0) {
+    if (this.state.count === 0) {
       clearInterval(this.state.countDown);
       this.setState({ redirect: true });
       localStorage.clear("ys-jwt");
