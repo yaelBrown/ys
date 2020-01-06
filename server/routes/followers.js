@@ -16,40 +16,51 @@ const findFollowers = (id, f) => {
       break;
   }
 
+  const cb = (res) => {
+    out = JSON.stringify(res);
+    // console.log(out);
+  }
+
   let out = "";
-  let query = db.query(sql, (err, result) => {
+  let query = db.query(sql, (err, rows) => {
     if (err) {
       console.error(err);
     } else {
-      out += JSON.stringify(result);
+      out = res.JSON(rows);
     }
   });
 
-  console.log("out is: " + out);
   return out;
 }
 
 //Gets both followers and followees
 router.get('/:id', async (req, res) => {
-  let following;
-  let followsYou;
+  let following = [];
+  let followsYou = [];
   const user = req.params.id;
 
+  let out;
   // Get following for :id
-  console.log(findFollowers(user, "follower"));
+  let sql = `SELECT * FROM followers where followerid = ${user} UNION ALL SELECT * FROM followers where followeeid = ${user}`;
+  let query = db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+    } else {
+      results.map(e => {
+        if (e.FollowerID == user) {
+          following.push(e.FolloweeName);
+        } else {
+          followsYou.push(e.FollowerName);
+        }
+      })
 
-  // Get followsYou for :id
-  followsYou = findFollowers(user, "followee");
+      out = {
+        who_i_follow: following,
+        my_followers: followsYou
+      }
 
-
-  let out = {
-    YouFollowing: following,
-    FollowingYou: followsYou
-  };
-
-  console.log("following is: " + following);
-
-  res.json(out);
-})
+      res.json(out);
+    }}
+  )})
 
 module.exports = router;
